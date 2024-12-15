@@ -1,0 +1,37 @@
+.carousel-container {
+    padding: 20px 0;
+}
+
+.item-headline {
+    font-size: calc(14rem/16);
+    font-weight: 600;
+    color: #5f5f5f;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.carousel-header {
+    margin-bottom: 24px;
+    font-size: calc(32rem/16);
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: .5px;
+    font-stretch: normal;
+    font-style: normal;
+}
+
+a.item-link {
+    color: #5f5f5f;
+    text-decoration: none;
+    border-bottom-width: 1.5px;
+    border-bottom-style: solid;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    width: 270px;
+}

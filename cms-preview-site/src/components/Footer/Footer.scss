@@ -1,0 +1,14 @@
+@use '../../styles/variables.module.scss' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+	--label-bg: var(--color-grey-2);
+
+	padding: 21px 0;
+	background: var(--color-grey-2);
+
+	@include bp-lg-up {
+		padding: 48.125px 0;
+	}
+    width: 100%;
+}
