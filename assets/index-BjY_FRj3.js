@@ -114,8 +114,8 @@ query($deliveryId: String) {
     }
   }
 }`;const Dy=t=>{const n=t.moduleData.content,i=n.media.name,s=()=>n.teasertargets[0].items.map(a=>ue.jsx("a",{className:"a-button",href:`${a.target.url}`,children:ue.jsx("div",{className:"button",children:a.headlineText})}));return ue.jsxs("div",{className:"hero-mini-container",children:[ue.jsx("div",{className:"media-asset",children:ue.jsx("img",{src:`https://underarmour.scene7.com/is/image/Underarmour/${i}?qlt=75&fmt=jpg&wid=1440&op_sharpen=1&`})}),ue.jsxs("div",{className:"teaser",children:[ue.jsx("div",{className:"hero-mini-snipe h6",children:n.teaser.snipeText}),ue.jsx("div",{className:"hero-mini-headline h1",children:n.teaser.headline.teaserTitle}),ue.jsx("div",{className:"hero-mini-subheadline body-text",children:n.teaser.subheadline.teaserTitle}),ue.jsx("div",{className:"cta-wrapper",children:s()})]})]})};function M_(){function t(){const[d]=vy(),h=d.get("page");return console.log(h),h}const e=qn`
-    query ($deliveryKey: String) {
-      page(deliveryKey: $deliveryKey) {
+    query ($deliveryId: String) {
+      page(deliveryId: $deliveryId) {
         slots {
           ... on Heromini {
             rawJson {
@@ -130,7 +130,7 @@ query($deliveryId: String) {
         }
       }
     }
-  `,n=t(),{loading:i,error:s,data:a}=Hm(e,{variables:{deliveryKey:n}});if(i)return ue.jsx("p",{children:"Loading..."});if(s)return ue.jsxs("p",{children:["Error: ",s.message]});const u=d=>{switch(d.__typename){case"Contentcarousel":return ue.jsx(Ny,{data:d.rawJson});case"Heromini":return ue.jsx(Dy,{moduleData:d.rawJson})}},f=()=>a.page.slots.map(d=>u(d));return f(),ue.jsx("div",{children:f()})}function L_(){return ue.jsx("div",{className:"header"})}function F_(){return ue.jsx("div",{className:"footer"})}function A_(){function t(){const[d]=vy();return d.get("content")}const e=qn`
+  `,n=t();console.log("getting a delivery Id",n);const{loading:i,error:s,data:a}=Hm(e,{variables:{deliveryId:n}});if(i)return ue.jsx("p",{children:"Loading..."});if(s)return ue.jsxs("p",{children:["Error: ",s.message]});const u=d=>{switch(d.__typename){case"Contentcarousel":return ue.jsx(Ny,{data:d.rawJson});case"Heromini":return ue.jsx(Dy,{moduleData:d.rawJson})}},f=()=>a.page.slots.map(d=>u(d));return f(),ue.jsx("div",{children:f()})}function L_(){return ue.jsx("div",{className:"header"})}function F_(){return ue.jsx("div",{className:"footer"})}function A_(){function t(){const[d]=vy();return d.get("content")}const e=qn`
   query($deliveryId: String) {
     contentNode(deliveryId: $deliveryId) {
       ... on Heromini {
